@@ -6,9 +6,9 @@ import { NotFoundPage } from '@/components/error-pages'
 
 import '../styles.css'
 
-const siteName = 'Kasia · Finansowa Bestie'
+const siteName = 'Finansowa Bestie | Warsztaty i prelekcje o finansach osobistych dla kobiet'
 const siteDescription =
-  'Kasia, czyli Finansowa Bestie — edukatorka finansowa i prelegentka, która pomaga młodym kobietom nabrać pewności w sprawach pieniędzy.'
+  'Kasia, czyli Finansowa Bestie - edukatorka finansowa i prelegentka, która pomaga młodym kobietom nabrać pewności w sprawach pieniędzy.'
 
 export const Route = createRootRoute({
   head: () => ({
