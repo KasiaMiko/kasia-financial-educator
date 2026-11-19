@@ -6,7 +6,7 @@ import { NotFoundPage } from '@/components/error-pages'
 
 import '../styles.css'
 
-const siteName = 'Finansowa Bestie | Warsztaty i prelekcje o finansach osobistych dla kobiet'
+const siteName = 'Finansowa Bestie | O finansach w przystępnej formie'
 const siteDescription =
   'Kasia, czyli Finansowa Bestie - edukatorka finansowa i prelegentka, która pomaga młodym kobietom nabrać pewności w sprawach pieniędzy.'
 
