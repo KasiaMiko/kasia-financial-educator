@@ -8,7 +8,7 @@ The imported `AGENTS.md` above covers the stack, conventions, theme variables an
 
 ## What this repo is
 
-A one-page personal site for Kasia, also known as "Finansowa Bestie": a financial educator and speaker for young women. All visible copy is in Polish (`lang="pl"`), and new copy should be Polish too. The owner is learning to code, so explain changes in plain language and point to the file and line where the content lives.
+A one-page personal site for Kasia, also known as "Finansowa Bestie": a financial educator and speaker for young women. Polish is the main language. An English version under `/en` mirrors every page (see Architecture), and new copy needs both versions. The owner is learning to code, so explain changes in plain language and point to the file and line where the content lives.
 
 ## Zasady pracy (od właścicielki)
 
@@ -16,7 +16,7 @@ A one-page personal site for Kasia, also known as "Finansowa Bestie": a financia
 - **Najpierw plan, potem zmiany.** Zanim zmienisz jakikolwiek plik, przedstaw krótki plan: co zmienisz i w których plikach. Zmiany wprowadzaj dopiero po akceptacji.
 - **Bez reklam i bez mediów społecznościowych.** Nie dodawaj na stronę reklam ani publikacji z mediów społecznościowych (np. osadzonych postów). Nie publikuj też niczego w mediach społecznościowych.
 
-`AGENTS.md`'s directory tree still calls `src/routes/index.tsx` a "placeholder page to replace". That is out of date: it is now the real, finished page.
+`AGENTS.md` still describes `src/routes/index.tsx` as the whole page (in the overview) and as a "placeholder page to replace" (in the directory tree). Both are out of date. The Architecture section below is current.
 
 ## Commands
 
@@ -34,7 +34,12 @@ Before reporting completion, run build, typecheck, lint, format:check and test.
 
 ## Architecture worth knowing
 
-- **Single route.** `src/routes/index.tsx` is the whole site. The `offers` and `interests` arrays at the top feed the repeated cards. The rest of the page is inline JSX sections (header, hero, about, offers, interests, CTA, footer). `__root.tsx` holds the HTML shell, the SEO metadata (`siteName`, `siteDescription`) and the Google Fonts `<link>`s.
+- **Two languages (PL and EN).** All visible copy lives in `src/i18n/pl.ts` and `src/i18n/en.ts`, including page titles and descriptions for Google. `en.ts` is typed as `Dictionary`, so it must mirror `pl.ts` exactly. Every text change has to be made in both files.
+- **Pages and routes.** Page layouts live in `src/components/pages/` (`HomePage`, `AboutPage`, `TalksPage`). They read their texts through `useT()` / `useLang()` from `@/i18n`, and the language comes from the URL. Route files are thin wrappers:
+  - `src/routes/*.tsx` serve Polish at `/`, `/o-mnie` and `/warsztaty-i-prelekcje`.
+  - `src/routes/en/*.tsx` serve English at the same slugs under `/en`.
+  - To add a page, add a dictionary section, a page component, both route files and an entry in `paths` in `src/i18n/index.ts`. The language switcher and the menu use `paths`.
+- **Shared chrome.** `SiteHeader` (menu and PL/EN switcher), `SiteFooter` and `ContactButton` are in `src/components/`. `__root.tsx` holds the HTML shell (`<html lang>` follows the URL), the default metadata and the Google Fonts `<link>`s.
 - **Contact form (Netlify Forms) is split across two files that must stay in sync:**
   - `src/components/ContactDialog.tsx` renders the form in a Dialog. It POSTs URL-encoded data with `form-name=contact` to `/contact-form.html`, and shows the result with `sonner` toasts.
   - `public/contact-form.html` is a hidden static copy. Netlify only detects it at deploy time.

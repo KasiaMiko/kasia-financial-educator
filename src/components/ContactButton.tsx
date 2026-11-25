@@ -2,14 +2,17 @@ import { Mail } from 'lucide-react'
 
 import { ContactDialog } from '@/components/ContactDialog'
 import { Button } from '@/components/ui/button'
+import { useT } from '@/i18n'
 
 export function ContactButton({
-  label = 'Napisz do mnie',
+  label,
   variant = 'default',
 }: {
   label?: string
   variant?: 'default' | 'outline'
 }) {
+  const t = useT().contact
+
   return (
     <ContactDialog
       trigger={
@@ -19,7 +22,7 @@ export function ContactButton({
           className="h-12 rounded-full px-7 text-base"
         >
           <Mail aria-hidden />
-          {label}
+          {label ?? t.button}
         </Button>
       }
     />

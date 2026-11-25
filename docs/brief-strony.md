@@ -7,6 +7,7 @@ Wersja: 20.11.2026 (v2). Plik przeznaczony do repozytorium (docs/brief-strony.md
 Strona ma przedstawić Kasię jako edukatorkę finansową dla kobiet 25-40 lat, zachęcić organizatorów do zaproszenia jej na prelekcje i warsztaty oraz udostępniać uczestniczkom darmowe narzędzia do finansów osobistych.
 
 **Dwie grupy odbiorców:**
+
 - **Organizatorzy wydarzeń** (firmy, uczelnie, fundacje, kluby kobiece): chcą szybko ocenić, czy prelegentka jest wiarygodna i jak się z nią skontaktować.
 - **Uczestniczki / kobiety 25-40 lat:** szukają prostych, zrozumiałych narzędzi i wiedzy o pieniądzach.
 
@@ -22,9 +23,11 @@ Strona ma przedstawić Kasię jako edukatorkę finansową dla kobiet 25-40 lat, 
 
 Ciepły, konkretny, bez żargonu i bez straszenia („bestie": przyjaciółka, która tłumaczy pieniądze). Treści edukacyjne, bez obietnic zysków i bez rekomendacji inwestycyjnych. Teksty strony po polsku, kod i nazwy plików po angielsku.
 
+**Wersja angielska (dodana 25.11.2026):** każda podstrona ma też wersję angielską pod adresem z przedrostkiem `/en` (np. `/en/o-mnie`). W nagłówku jest przełącznik PL | EN. Teksty obu wersji są w `src/i18n/pl.ts` i `src/i18n/en.ts`. Każdą zmianę treści trzeba wprowadzić w obu językach.
+
 ## 4. Struktura i nawigacja
 
-Menu główne: **Strona główna | O mnie | Prelekcje i warsztaty | Narzędzia | Kontakt**
+Menu główne: **Strona główna | O mnie | Warsztaty i prelekcje | Narzędzia | Kontakt**
 Stopka: Prywatność i cookies, zastrzeżenie edukacyjne, e-mail kontaktowy, linki do profili.
 
 Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do Kontaktu) i **„Darmowe narzędzia"**.
@@ -32,6 +35,7 @@ Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do
 ## 5. Podstrony
 
 ### 5.1 Strona główna (z sekcją „O mnie")
+
 - **Cel:** przedstawić, kim jestem, i skierować odbiorczynię do właściwej ścieżki.
 - **Odbiorcy:** uczestniczki i organizatorzy.
 - **Treść:** nagłówek z jedną obietnicą, krótki opis dla kogo, sekcja „O mnie" (zdjęcie, 150-200 słów, misja, doświadczenie), skrót oferty prelekcji, kafelki narzędzi, przycisk zaproszenia.
@@ -40,6 +44,7 @@ Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do
 - **Gotowa, gdy:** nowa osoba w 10 sekund wie, kim jesteś, dla kogo i jak się z Tobą skontaktować.
 
 ### 5.2 Prelekcje i warsztaty
+
 - **Cel:** pokazać doświadczenie i ułatwić zaproszenie.
 - **Odbiorcy:** organizatorzy (główni) i uczestniczki.
 - **Treść:** 3-4 tematy (tytuł, czas, dla kogo, efekt), formaty (online/stacjonarnie), sekcja „Dotychczasowe wystąpienia" z jednym większym wystąpieniem (data, miejsce, temat, zdjęcia), sekcja „Nadchodzące wydarzenia" (na start może być pusta lub z krótką informacją „kolejne terminy wkrótce"), FAQ dla organizatora, przycisk Kontakt.
@@ -49,6 +54,7 @@ Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do
 - **Gotowa, gdy:** organizator widzi tematy, format i dotychczasowe doświadczenie i może od razu napisać.
 
 ### 5.3 Darmowe narzędzia
+
 - **Cel:** dzielić się wiedzą finansową przez proste narzędzia (intencjonalne wydawanie, budżet domowy, oszczędzanie).
 - **Odbiorcy:** uczestniczki.
 - **Narzędzia:** tracker poduszki bezpieczeństwa, generator planu oszczędzania, mini-słownik finansowy. Obliczenia w przeglądarce, bez zapisu danych na serwerze.
@@ -56,12 +62,14 @@ Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do
 - **Gotowa, gdy:** każde narzędzie działa na telefonie i wynik zgadza się z arkuszem na 5 przypadkach testowych.
 
 ### 5.4 Kontakt
+
 - **Cel:** umożliwić organizatorom zaproszenie Kasi na wydarzenie.
 - **Odbiorcy:** głównie organizatorzy.
 - **Treść:** formularz (imię, organizacja, e-mail, data i miejsce wydarzenia, liczba osób, temat, wiadomość), zgoda na przetwarzanie danych, adres finansowa.bestie@gmail.com, linki do profili, informacja o czasie odpowiedzi.
 - **Gotowa, gdy:** zgłoszenie dociera na e-mail, formularz jest chroniony przed spamem i działa na telefonie.
 
 ### 5.5 Prywatność (strona w stopce)
+
 - **Cel:** wymagane informacje prawne.
 - **Treść:** polityka prywatności (dane z formularza, narzędzia zewnętrzne, zdjęcia), informacja o cookies, zastrzeżenie edukacyjne.
 - **Uwaga:** szkic przygotowuje AI, ale **ostateczną treść zweryfikuj z prawnikiem**.
@@ -79,6 +87,7 @@ Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do
 **Faza 1 (do 11.12):** strona główna z „O mnie", Prelekcje i warsztaty, Kontakt, Prywatność, menu i stopka.
 **Faza 2 (14-23.12):** darmowe narzędzia (3 narzędzia).
 **Styczeń 2027:**
+
 - małe wystąpienia (zbieranie doświadczeń i opinii),
 - podłączenie domeny finansowabestie.pl w Netlify i sprawdzenie certyfikatu SSL,
 - dodanie opinii i zdjęć z nowych wystąpień,

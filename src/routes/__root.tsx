@@ -3,12 +3,14 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { Toaster } from '@/components/ui/sonner'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { NotFoundPage } from '@/components/error-pages'
+import { dictionaries, useLang } from '@/i18n'
 
 import '../styles.css'
 
-const siteName = 'Finansowa Bestie | O finansach w przystępnej formie'
-const siteDescription =
-  'Kasia, czyli Finansowa Bestie - edukatorka finansowa i prelegentka, która pomaga młodym kobietom nabrać pewności w sprawach pieniędzy.'
+// Defaults for every page. Each route overrides them in its own head()
+// with the texts from src/i18n (pl.ts / en.ts).
+const siteName = dictionaries.pl.meta.home.title
+const siteDescription = dictionaries.pl.meta.home.description
 
 export const Route = createRootRoute({
   head: () => ({
@@ -62,8 +64,10 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const lang = useLang()
+
   return (
-    <html lang="pl">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>

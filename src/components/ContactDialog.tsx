@@ -13,10 +13,12 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { useT } from '@/i18n'
 
 type State = 'idle' | 'pending' | 'success' | 'error'
 
 export function ContactDialog({ trigger }: { trigger: ReactNode }) {
+  const t = useT().contact
   const [open, setOpen] = useState(false)
   const [state, setState] = useState<State>('idle')
 
@@ -59,12 +61,9 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="font-display text-3xl font-normal">
-            Porozmawiajmy
+            {t.title}
           </DialogTitle>
-          <DialogDescription>
-            Warsztaty, wystąpienia, panele czy współprace — napisz, co masz na
-            myśli, a odezwę się do Ciebie.
-          </DialogDescription>
+          <DialogDescription>{t.description}</DialogDescription>
         </DialogHeader>
 
         {state === 'success' ? (
@@ -76,16 +75,14 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
               className="size-10 text-accent-foreground"
               aria-hidden
             />
-            <p className="font-display text-2xl">Dziękuję!</p>
-            <p className="text-sm text-muted-foreground">
-              Twoja wiadomość dotarła. Wkrótce się odezwę.
-            </p>
+            <p className="font-display text-2xl">{t.successTitle}</p>
+            <p className="text-sm text-muted-foreground">{t.successText}</p>
             <Button
               variant="outline"
               className="mt-2"
               onClick={() => setOpen(false)}
             >
-              Zamknij
+              {t.close}
             </Button>
           </div>
         ) : (
@@ -103,13 +100,13 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>
-                Pozostaw puste
+                {t.honeypot}
                 <input name="bot-field" tabIndex={-1} autoComplete="off" />
               </label>
             </p>
             <fieldset disabled={state === 'pending'} className="grid gap-4">
               <div className="grid gap-2">
-                <Label htmlFor="contact-name">Imię i nazwisko</Label>
+                <Label htmlFor="contact-name">{t.name}</Label>
                 <Input
                   id="contact-name"
                   name="name"
@@ -119,7 +116,7 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="contact-email">E-mail</Label>
+                <Label htmlFor="contact-email">{t.email}</Label>
                 <Input
                   id="contact-email"
                   name="email"
@@ -131,8 +128,8 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="contact-org">
-                  Organizacja{' '}
-                  <span className="text-muted-foreground">(opcjonalnie)</span>
+                  {t.organization}{' '}
+                  <span className="text-muted-foreground">{t.optional}</span>
                 </Label>
                 <Input
                   id="contact-org"
@@ -142,7 +139,7 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="contact-message">Wiadomość</Label>
+                <Label htmlFor="contact-message">{t.message}</Label>
                 <Textarea
                   id="contact-message"
                   name="message"
@@ -153,12 +150,11 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
               </div>
               {state === 'error' && (
                 <p role="alert" className="text-sm text-destructive">
-                  Nie udało się wysłać wiadomości. Twoje dane zostały w
-                  formularzu — spróbuj ponownie za chwilę.
+                  {t.error}
                 </p>
               )}
               <Button type="submit" size="lg" className="rounded-full">
-                {state === 'pending' ? 'Wysyłanie…' : 'Wyślij wiadomość'}
+                {state === 'pending' ? t.sending : t.send}
               </Button>
             </fieldset>
           </form>
