@@ -22,6 +22,8 @@ Strona ma przedstawić Kasię jako edukatorkę finansową dla kobiet 25-40 lat, 
 
 Ciepły, konkretny, bez żargonu i bez straszenia („bestie": przyjaciółka, która tłumaczy pieniądze). Treści edukacyjne, bez obietnic zysków i bez rekomendacji inwestycyjnych. Teksty strony po polsku, kod i nazwy plików po angielsku.
 
+**Wersja angielska (dodana 25.11.2026):** każda podstrona ma też wersję angielską pod adresem z przedrostkiem `/en` (np. `/en/o-mnie`). W nagłówku jest przełącznik PL | EN. Teksty obu wersji są w `src/i18n/pl.ts` i `src/i18n/en.ts`. Każdą zmianę treści trzeba wprowadzić w obu językach.
+
 ## 4. Struktura i nawigacja
 
 Menu główne: **Strona główna | O mnie | Warsztaty i prelekcje | Narzędzia | Kontakt**
