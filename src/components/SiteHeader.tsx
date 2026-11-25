@@ -12,12 +12,18 @@ export function SiteHeader() {
       <Link to="/" className="font-display text-2xl tracking-tight">
         Finansowa Bestie
       </Link>
-      <nav aria-label="Menu główne" className="-mx-3 flex items-center gap-1">
+      <nav
+        aria-label="Menu główne"
+        className="-mx-3 flex flex-wrap items-center gap-1"
+      >
         <Link to="/" activeOptions={{ exact: true }} className={navLinkClass}>
           Strona główna
         </Link>
         <Link to="/o-mnie" className={navLinkClass}>
           O mnie
+        </Link>
+        <Link to="/warsztaty-i-prelekcje" className={navLinkClass}>
+          Warsztaty i prelekcje
         </Link>
         <ContactDialog
           trigger={

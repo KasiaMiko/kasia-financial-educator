@@ -24,7 +24,7 @@ Ciepły, konkretny, bez żargonu i bez straszenia („bestie": przyjaciółka, k
 
 ## 4. Struktura i nawigacja
 
-Menu główne: **Strona główna | O mnie | Prelekcje i warsztaty | Narzędzia | Kontakt**
+Menu główne: **Strona główna | O mnie | Warsztaty i prelekcje | Narzędzia | Kontakt**
 Stopka: Prywatność i cookies, zastrzeżenie edukacyjne, e-mail kontaktowy, linki do profili.
 
 Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do Kontaktu) i **„Darmowe narzędzia"**.

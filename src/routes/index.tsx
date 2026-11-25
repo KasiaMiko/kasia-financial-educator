@@ -130,6 +130,13 @@ function Home() {
                 </div>
               ))}
             </div>
+            <Link
+              to="/warsztaty-i-prelekcje"
+              className="mt-8 inline-flex items-center gap-2 text-base font-medium underline-offset-4 hover:underline"
+            >
+              Zobacz tematy prelekcji i warsztatów{' '}
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
           </div>
         </section>
 
