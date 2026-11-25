@@ -1,8 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { ArrowRight, BookOpen, Code2, Mail, Plane } from 'lucide-react'
+import { Link, createFileRoute } from '@tanstack/react-router'
+import { ArrowRight, BookOpen, Code2, Plane } from 'lucide-react'
 
-import { ContactDialog } from '@/components/ContactDialog'
-import { Button } from '@/components/ui/button'
+import { ContactButton } from '@/components/ContactButton'
+import { SiteFooter } from '@/components/SiteFooter'
+import { SiteHeader } from '@/components/SiteHeader'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -41,44 +42,10 @@ const interests = [
   },
 ]
 
-function ContactButton({
-  label = 'Napisz do mnie',
-  variant = 'default',
-}: {
-  label?: string
-  variant?: 'default' | 'outline'
-}) {
-  return (
-    <ContactDialog
-      trigger={
-        <Button
-          size="lg"
-          variant={variant}
-          className="h-12 rounded-full px-7 text-base"
-        >
-          <Mail aria-hidden />
-          {label}
-        </Button>
-      }
-    />
-  )
-}
-
 function Home() {
   return (
     <div className="min-h-screen">
-      <header className="mx-auto flex max-w-content items-center justify-between px-6 py-6">
-        <a href="/" className="font-display text-2xl tracking-tight">
-          Finansowa Bestie
-        </a>
-        <ContactDialog
-          trigger={
-            <Button variant="ghost" className="rounded-full">
-              Kontakt
-            </Button>
-          }
-        />
-      </header>
+      <SiteHeader />
 
       <main>
         {/* Hero */}
@@ -100,12 +67,12 @@ function Home() {
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <ContactButton label="Zaproś mnie na wystąpienie" />
-            <a
-              href="#about"
+            <Link
+              to="/o-mnie"
               className="inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline"
             >
               Więcej o mnie <ArrowRight className="size-4" aria-hidden />
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -126,6 +93,13 @@ function Home() {
                 oszczędzania, inwestowania i podejmowania decyzji, które pasują
                 do życia, jakiego pragną.
               </p>
+              <Link
+                to="/o-mnie"
+                className="inline-flex items-center gap-2 text-base font-medium text-foreground underline-offset-4 hover:underline"
+              >
+                Przeczytaj więcej o mnie{' '}
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
             </div>
           </div>
         </section>
@@ -201,14 +175,7 @@ function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-content flex-col items-center justify-between gap-2 px-6 py-8 text-sm text-muted-foreground sm:flex-row">
-          <span className="font-display text-lg text-foreground">
-            Kasia · Finansowa Bestie
-          </span>
-          <span>© 2026 Wszelkie prawa zastrzeżone.</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }
