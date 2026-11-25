@@ -24,7 +24,7 @@ Ciepły, konkretny, bez żargonu i bez straszenia („bestie": przyjaciółka, k
 
 ## 4. Struktura i nawigacja
 
-Menu główne: **Strona główna | Prelekcje i warsztaty | Narzędzia | Kontakt**
+Menu główne: **Strona główna | O mnie | Prelekcje i warsztaty | Narzędzia | Kontakt**
 Stopka: Prywatność i cookies, zastrzeżenie edukacyjne, e-mail kontaktowy, linki do profili.
 
 Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do Kontaktu) i **„Darmowe narzędzia"**.
@@ -36,6 +36,7 @@ Dwa główne przyciski działania na stronie głównej: **„Zaproś mnie"** (do
 - **Odbiorcy:** uczestniczki i organizatorzy.
 - **Treść:** nagłówek z jedną obietnicą, krótki opis dla kogo, sekcja „O mnie" (zdjęcie, 150-200 słów, misja, doświadczenie), skrót oferty prelekcji, kafelki narzędzi, przycisk zaproszenia.
 - **Materiały:** zdjęcie profilowe, 3-5 faktów o sobie.
+- **Zmiana (25.11.2026):** pełna historia jest na osobnej podstronie **O mnie** (`/o-mnie`, w menu). Na stronie głównej zostaje krótka sekcja „O mnie” z linkiem do podstrony.
 - **Gotowa, gdy:** nowa osoba w 10 sekund wie, kim jesteś, dla kogo i jak się z Tobą skontaktować.
 
 ### 5.2 Prelekcje i warsztaty
