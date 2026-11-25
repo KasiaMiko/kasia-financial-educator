@@ -27,8 +27,7 @@ export function langFromPath(pathname: string): Lang {
 
 /** Which page the address points to, ignoring the language prefix. */
 export function pageFromPath(pathname: string): PageKey {
-  const trimmed =
-    pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
+  const trimmed = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname
   const lang = langFromPath(trimmed)
   return (
     pageKeys.find((key) => paths[lang][key] === trimmed) ?? ('home' as const)

@@ -183,7 +183,8 @@ export const en: Dictionary = {
       },
       {
         kind: 'Workshop',
-        title: "I'm saving — now what? How not to let inflation eat your savings",
+        title:
+          "I'm saving — now what? How not to let inflation eat your savings",
         text: 'For women who have savings but keep them in a bank account because investing seems difficult or scary.',
         details: [
           { label: 'Duration and format', value: '2 h, in person or online' },

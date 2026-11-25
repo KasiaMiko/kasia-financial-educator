@@ -25,9 +25,7 @@ export function HomePage() {
           <h1 className="font-display text-6xl leading-[1.02] tracking-tight sm:text-8xl">
             {t.titleLine1}
             <br />
-            <span className="text-muted-foreground italic">
-              {t.titleLine2}
-            </span>
+            <span className="text-muted-foreground italic">{t.titleLine2}</span>
           </h1>
           <p className="mt-8 max-w-reading text-lg leading-relaxed text-muted-foreground sm:text-xl">
             {t.intro}

@@ -147,7 +147,10 @@ export const pl = {
             value:
               'kobiety w IT i korporacjach, które dobrze zarabiają, ale nie widzą wzrostu majątku',
           },
-          { label: 'Liczba osób', value: 'stacjonarnie 20–300+, online do 100+' },
+          {
+            label: 'Liczba osób',
+            value: 'stacjonarnie 20–300+, online do 100+',
+          },
         ],
         outcomes: [
           'zrozumienie, jak działa inflacja stylu życia',
