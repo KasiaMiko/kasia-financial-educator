@@ -16,79 +16,61 @@ code {
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/*
+ * Design system „Finansowa Bestie” (kierunek: bestie w garniturze).
+ * Kolory marki mają polskie nazwy z brand booka. Tailwind udostępnia je
+ * jako klasy, np. bg-granat, text-morski, border-poszetka.
+ */
 :root {
-  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: 'Instrument Serif', ui-serif, Georgia, serif;
+  /* Kolory marki */
+  --krem: #f7f5f2; /* główne tło */
+  --bialy: #ffffff; /* karty na kremowym tle */
+  --granat: #1b2638; /* kolor garnituru: nagłówki, prążek */
+  --morski: #0d5c63; /* linki, wyróżnienia, puenta kursywą */
+  --grafit: #333333; /* tekst główny */
+  --morela: #f4a261; /* przyciski i naklejki; tekst na niej tylko granat */
+  --poszetka: #e0c1b3; /* ramki, linie, małe naklejki */
+  --tekst-pomocniczy: #5c6470; /* podpisy, przypisy, źródła */
+
+  /* Jedna rodzina pisma: Plus Jakarta Sans */
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --content-width: 64rem;
   --reading-width: 40rem;
-  --background: oklch(0.985 0.006 75);
-  --foreground: oklch(0.24 0.012 40);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.012 40);
-  --popover: oklch(0.995 0.003 75);
-  --popover-foreground: oklch(0.24 0.012 40);
-  --primary: oklch(0.26 0.014 40);
-  --primary-foreground: oklch(0.985 0.006 75);
-  --secondary: oklch(0.955 0.012 50);
-  --secondary-foreground: oklch(0.26 0.014 40);
-  --muted: oklch(0.96 0.008 70);
-  --muted-foreground: oklch(0.5 0.015 45);
-  --accent: oklch(0.93 0.035 20);
-  --accent-foreground: oklch(0.45 0.09 20);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.91 0.01 60);
-  --input: oklch(0.89 0.012 60);
-  --ring: oklch(0.7 0.08 20);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.871 0.006 286.286);
-}
 
-.dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
+  /* Zmienne komponentów (shadcn/ui) ustawione na kolory marki */
+  --background: var(--krem);
+  --foreground: var(--grafit);
+  --card: var(--bialy);
+  --card-foreground: var(--grafit);
+  --popover: var(--bialy);
+  --popover-foreground: var(--grafit);
+  --primary: var(--granat);
+  --primary-foreground: var(--krem);
+  --secondary: var(--bialy);
+  --secondary-foreground: var(--granat);
+  --muted: var(--bialy);
+  --muted-foreground: var(--tekst-pomocniczy);
+  --accent: var(--poszetka);
+  --accent-foreground: var(--granat);
+  --destructive: #b42318;
+  --destructive-foreground: var(--bialy);
+  --border: var(--poszetka);
+  --input: var(--tekst-pomocniczy);
+  --ring: var(--morski);
+  --chart-1: var(--morski);
+  --chart-2: var(--granat);
+  --chart-3: var(--morela);
+  --chart-4: var(--poszetka);
+  --chart-5: var(--tekst-pomocniczy);
+  --sidebar: var(--krem);
+  --sidebar-foreground: var(--grafit);
+  --sidebar-primary: var(--granat);
+  --sidebar-primary-foreground: var(--krem);
+  --sidebar-accent: var(--poszetka);
+  --sidebar-accent-foreground: var(--granat);
+  --sidebar-border: var(--poszetka);
+  --sidebar-ring: var(--morski);
 }
 
 @theme inline {
@@ -96,6 +78,14 @@ code {
   --font-display: var(--font-heading);
   --container-content: var(--content-width);
   --container-reading: var(--reading-width);
+  --color-krem: var(--krem);
+  --color-bialy: var(--bialy);
+  --color-granat: var(--granat);
+  --color-morski: var(--morski);
+  --color-grafit: var(--grafit);
+  --color-morela: var(--morela);
+  --color-poszetka: var(--poszetka);
+  --color-tekst-pomocniczy: var(--tekst-pomocniczy);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,10 +110,14 @@ code {
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  /* Zaokrąglenia z brand booka: karty proste (0), pola formularzy 4 px.
+     Przyciski i naklejki mają pełne zaokrąglenie (rounded-full). */
+  --radius-xs: 0px;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -134,11 +128,59 @@ code {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Prążek z tkaniny garnituru: granatowe tło, kremowa linia 1 px co 24 px.
+   Tekstu nie kładziemy bezpośrednio na prążku, tylko na kremowej karcie. */
+@utility prazek {
+  background-color: var(--granat);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 24px,
+    rgb(247 245 242 / 0.3) 24px 25px
+  );
+}
+
+/* Wąski pasek prążka (np. w zastrzeżeniu) */
+@utility prazek-pasek {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--granat) 0 3px,
+    var(--krem) 3px 4px
+  );
+}
+
+/* Etykieta: krótkie słowa wersalikami (styl „label”) */
+@utility etykieta {
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Naklejka: pigułka z granatowym tekstem, lekko przekrzywiona */
+@utility naklejka {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--granat);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--granat);
   }
 }

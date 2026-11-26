@@ -13,8 +13,8 @@ export function NotFoundPage() {
   return (
     <main className="grid min-h-svh place-items-center px-6 py-16">
       <div className="max-w-md space-y-6 text-center">
-        <p className="text-sm font-medium text-muted-foreground">404</p>
-        <h1 className="text-3xl font-semibold tracking-tight">
+        <p className="etykieta text-morski">404</p>
+        <h1 className="text-3xl leading-[1.15] font-extrabold tracking-[-0.02em]">
           {t.notFoundTitle}
         </h1>
         <p className="text-muted-foreground">{t.notFoundText}</p>
@@ -34,7 +34,7 @@ export function RouteErrorPage({ reset }: ErrorComponentProps) {
   return (
     <main className="grid min-h-svh place-items-center px-6 py-16">
       <div className="max-w-md space-y-6 text-center">
-        <h1 className="text-3xl font-semibold tracking-tight">
+        <h1 className="text-3xl leading-[1.15] font-extrabold tracking-[-0.02em]">
           {t.loadErrorTitle}
         </h1>
         <p role="alert" className="text-muted-foreground">

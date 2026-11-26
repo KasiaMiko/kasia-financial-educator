@@ -58,9 +58,9 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
       }}
     >
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="border-poszetka bg-krem sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-display text-3xl font-normal">
+          <DialogTitle className="font-display text-3xl leading-[1.15] font-extrabold tracking-[-0.02em] text-granat">
             {t.title}
           </DialogTitle>
           <DialogDescription>{t.description}</DialogDescription>
@@ -71,11 +71,8 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
             role="status"
             className="flex flex-col items-center gap-3 py-8 text-center"
           >
-            <CheckCircle2
-              className="size-10 text-accent-foreground"
-              aria-hidden
-            />
-            <p className="font-display text-2xl">{t.successTitle}</p>
+            <CheckCircle2 className="size-10 text-morski" aria-hidden />
+            <p className="text-2xl font-bold text-granat">{t.successTitle}</p>
             <p className="text-sm text-muted-foreground">{t.successText}</p>
             <Button
               variant="outline"
@@ -153,7 +150,7 @@ export function ContactDialog({ trigger }: { trigger: ReactNode }) {
                   {t.error}
                 </p>
               )}
-              <Button type="submit" size="lg" className="rounded-full">
+              <Button type="submit" size="lg" className="h-12 text-base">
                 {state === 'pending' ? t.sending : t.send}
               </Button>
             </fieldset>

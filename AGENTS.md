@@ -9,7 +9,7 @@ A minimal one-page personal site for Kasia ("Finansowa Bestie"), a financial edu
 - `src/routes/index.tsx` — the entire page (hero, about, opportunities, interests, CTA, footer). Content arrays `offers` and `interests` are at the top of the file.
 - `src/components/ContactDialog.tsx` — contact button dialog with a Netlify Forms form named `contact` (fields: name, email, organization, message, bot-field honeypot). It POSTs URL-encoded data to `/contact-form.html`, not `/`, because the SSR catch-all would intercept `/`.
 - `public/contact-form.html` — static registration copy of the form so Netlify detects it at deploy time. Its field names must stay identical to the React form.
-- Design: light warm off-white background, Instrument Serif headings (`font-display`) + Manrope body, soft rose accent. Fonts are loaded in `src/routes/__root.tsx`. Keep it minimalistic.
+- Design: "Finansowa Bestie" design system: cream background, navy (`granat`) headings, teal (`morski`) links, apricot (`morela`) buttons, Plus Jakarta Sans throughout. Fonts are loaded in `src/routes/__root.tsx`. Keep it minimalistic.
 
 ### Tech Stack
 

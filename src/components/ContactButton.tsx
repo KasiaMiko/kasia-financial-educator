@@ -16,11 +16,7 @@ export function ContactButton({
   return (
     <ContactDialog
       trigger={
-        <Button
-          size="lg"
-          variant={variant}
-          className="h-12 rounded-full px-7 text-base"
-        >
+        <Button size="lg" variant={variant} className="h-12 px-6 text-base">
           <Mail aria-hidden />
           {label ?? t.button}
         </Button>

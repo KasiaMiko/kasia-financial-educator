@@ -8,7 +8,7 @@ The page covers an introduction, an about section, the kinds of opportunities Ka
 
 - TanStack Start + React 19, Tailwind CSS 4, shadcn/ui components
 - Netlify Forms for contact form submissions (view them in the Netlify dashboard under **Forms**)
-- Fonts: Instrument Serif (headings) and Manrope (body) from Google Fonts
+- Fonts: Plus Jakarta Sans (headings and body) from Google Fonts
 
 ## Run locally
 
