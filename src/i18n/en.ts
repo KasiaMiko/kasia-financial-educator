@@ -33,6 +33,9 @@ export const en: Dictionary = {
   footer: {
     name: 'Kasia · Finansowa Bestie',
     rights: '© 2026 All rights reserved.',
+    disclaimerLead: 'This is not investment advice,',
+    disclaimerRest:
+      'just my own experience and education. Make your investment decisions independently and with full awareness.',
   },
 
   contact: {

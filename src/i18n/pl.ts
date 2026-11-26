@@ -32,6 +32,9 @@ export const pl = {
   footer: {
     name: 'Kasia · Finansowa Bestie',
     rights: '© 2026 Wszelkie prawa zastrzeżone.',
+    disclaimerLead: 'To nie jest porada inwestycyjna,',
+    disclaimerRest:
+      'tylko moje doświadczenia i edukacja. Decyzje o inwestowaniu podejmuj samodzielnie i świadomie.',
   },
 
   contact: {
